@@ -1,30 +1,28 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int main()
-{
+int main() {
+    int a = 0;
+    int b = 0;
     int n;
     scanf("%d", &n);
-    int chisla[n];
-    int contrl;
-    for(int i  = 0; i < n; i++){
-        scanf("%d", &chisla[i]);
-    }
-    scanf("%d", &contrl);
-    int r = 0;
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            if(chisla[i] * chisla[j] > r && chisla[i] * chisla[j] % 26 == 0){
-                r = chisla[i] * chisla[j];
-            }
+    for (int i = 0; i < n; i++) {
+        int x;
+        scanf("%d", &x);
+        if (x % 2 == 0 && x > a) {
+            a = x;
+        } else if (x % 2 && x > b) {
+            b = x;
         }
     }
-    if(r == contrl){
-        printf("Вычисленное контрольное значение:%d", r);
-    }
-    else{
+    int contrl;
+    contrl = a + b;
+    printf("Вычисленное контрольное значение: %d", contrl);
+    int R;
+    scanf("%d", &R);
+    if (R == contrl) {
+        printf("Контроль пройден");
+    } else {
         printf("Контроль не пройден");
     }
 
-    return 0;
 }
