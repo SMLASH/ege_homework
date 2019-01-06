@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1546780652 source:/home/makar/Documents/homework/tasks/ege_c2_1.c
+	<stdio.h>
+	"ege_c2_1.h"
+
+1546780045 /home/makar/Documents/homework/tasks/ege_c2_1.h
+
+1546780675 source:/home/makar/Documents/homework/tasks/main.c
+	<stdio.h>
+	<stdlib.h>
+	"ege_c2_1.h"
+
