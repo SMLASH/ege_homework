@@ -1,3 +1,5 @@
+//https://inf-ege.sdamgia.ru/problem?id=6792
+
 #include <stdio.h>
 #include <stdlib.h>
 
