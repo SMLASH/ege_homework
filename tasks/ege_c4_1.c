@@ -1,39 +1,34 @@
 //https://inf-ege.sdamgia.ru/problem?id=6792
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int c4_1()
-{
+int main(void) {
     int n;
-    int deti;
     scanf("%d", &n);
     int results[n];
-    int konf;
-    int sneg_znach = 0;
-    int zapisi = 0;
-    int max;
+    int most_often = 0;
+    int counter_of_most_often[0];
+    int max_value_of_cases = 0;
     for(int i = 0; i < n; i++){
-        scanf("%d", &deti);
-        scanf("%d", &konf);
-        results[i] = deti - konf;
-        sneg_znach = sneg_znach + (deti - konf);
+        int kids;
+        int sweets;
+        scanf("%d %d", &kids, &sweets);
+        if(kids % sweets == 0){
+            results[i] = 0;
+        }
+        else{
+            results[i] = sweets % kids;
+        }
     }
     for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            if(results[i] == results[j]){
-                zapisi++;
+        for(int j = i + 1; j < n / 2; j++){
+            if(results[i] == results[j] && results[i] != 0){
+                counter_of_most_often[i]++;
             }
         }
-        if(zapisi > max){
-            max = zapisi;
-        }
+        if(counter_of_most_often[i] > max_value_of_cases)
+            most_often = results[i];
     }
-    if(sneg_znach == 0){
-        printf("0");
-    }
-    else{
-        printf("%d", max);
-    }
-    return 0;
+    printf("%d", most_often);
+
 }
